@@ -3,7 +3,7 @@
 
 ## Motivation
 
-Loosely inspired by the beloved django-cookiecutter, ponnee is a lightweight Django template without too many assumptions.
+Loosely inspired by the beloved django-cookiecutter, ponee is a lightweight Django template without too many assumptions.
 
 ## What's included
 
@@ -44,10 +44,10 @@ Install the dependencies:
 pip install -r ./requirements/dev.txt
 ```
 
-Copy the example env to `.env` and adjust the variables as you wish:
+Copy the example env to `.env` and adjust the variables as needed:
 
 ```bash
-mv .env.example .env
+cp .env.example .env
 ```
 
 Before starting off make the migrations for the custom User:
@@ -57,11 +57,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-and your good to runserver!
-
-## Environment variables
-
-See `.env.example` for a complete list
+and your good to run the development server!
 
 ## Deploy on Heroku
 
@@ -71,25 +67,34 @@ Before starting off you should have a Git repo in your project folder:
 git init
 ```
 
-Login on Heroku with the Heroku toolbelt:
+Login on Heroku with the Heroku CLI:
 
 ```bash
 heroku login
 ```
 
-Create a new app (you can change the name later):
+Create a new app (you can change its name later):
 
 ```bash
 heroku apps:create --region eu
 ```
 
-Copy the example `.env.prod.example` to `.env.prod` and run:
+Copy `.env.prod.example` to `.env.prod` and adjust the variables as needed. You might also need to add the email configuration:
+
+```.env
+EMAIL_HOST=localhost
+EMAIL_PORT=587
+EMAIL_HOST_USER=someuser
+EMAIL_HOST_PASSWORD=somepass
+```
+
+Now run:
 
 ```bash
 python configure_prod_envs.py
 ```
 
-The script reads all the env variables from `.env.prod` and runs `heroku config:set` for each one.
+The script reads all the env variables from `.env.prod` and runs `heroku config:set` for each.
 
 Finally make a commit and push the code:
 
