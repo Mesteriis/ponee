@@ -79,16 +79,7 @@ Create a new app (you can change its name later):
 heroku apps:create --region eu
 ```
 
-Copy `.env.prod.example` to `.env.prod` and adjust the variables as needed. You might also need to add the email configuration:
-
-```.env
-EMAIL_HOST=localhost
-EMAIL_PORT=587
-EMAIL_HOST_USER=someuser
-EMAIL_HOST_PASSWORD=somepass
-```
-
-Now run:
+Copy `.env.prod.example` to `.env.prod` and adjust the variables as needed. Now run:
 
 ```bash
 python configure_prod_envs.py

@@ -15,10 +15,10 @@ REST_FRAMEWORK = {
     )
 }
 
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_PORT = env('EMAIL_PORT')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = env.str('EMAIL_HOST', "or empty")
+EMAIL_PORT = env.int('EMAIL_PORT', 587)
+EMAIL_HOST_USER = env.str('EMAIL_HOST_USER', "or empty")
+EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD', "or empty")
 EMAIL_USE_SSL = True
 
 django_heroku.settings(locals())
