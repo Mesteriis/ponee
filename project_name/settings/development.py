@@ -10,3 +10,11 @@ EMAIL_BACKEND = env(
     "EMAIL_BACKEND",
     default="django.core.mail.backends.console.EmailBackend"
 )
+
+LOGGING = {
+    "loggers": {
+        "django.db.backends": {
+            "level": "DEBUG",
+        },
+    },
+}
