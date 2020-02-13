@@ -16,7 +16,7 @@ Loosely inspired by the beloved django-cookiecutter, ponee is a lightweight Djan
 - Heroku support with [django-heroku](https://github.com/heroku/django-heroku)
 - Testing and coverage
 
-Ponee uses sqlite3 for development but you can easily switch to PostgreSQL by tweaking `settings.base.py`.
+Ponee uses PostgreSQL for development.
 
 ## Installation
 

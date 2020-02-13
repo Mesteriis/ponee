@@ -11,6 +11,21 @@ EMAIL_BACKEND = env(
     default="django.core.mail.backends.console.EmailBackend"
 )
 
+# Database
+# https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'TEST': {
+            'NAME': env('DB_TEST_NAME')
+        }
+    }
+}
+
 LOGGING = {
     "version": 1,
     "loggers": {
