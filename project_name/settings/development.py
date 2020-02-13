@@ -12,6 +12,7 @@ EMAIL_BACKEND = env(
 )
 
 LOGGING = {
+    "version": 1,
     "loggers": {
         "django.db.backends": {
             "level": "DEBUG",
